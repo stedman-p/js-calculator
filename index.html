@@ -4,33 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="./scripts.js"></script>
     <title>JS Calculator</title>
 </head>
 <body>
-    <div class="calculator">
-        <h1>Javascript Calculator</h1>
-        <div class="display">
-            <output name="calc" >0</output>
-        </div>
-        <div class="calc-buttons">
-            <button type="button" name="calc">9</button>
-            <button type="button" name="calc">8</button>
-            <button type="button" name="calc">7</button>
-            <button type="button" name="calc">6</button>
-            <button type="button" name="calc">5</button>
-            <button type="button" name="calc">4</button>
-            <button type="button" name="calc">3</button>
-            <button type="button" name="calc">2</button>
-            <button type="button" name="calc">1</button>
-            <button type="button" name="calc">0</button>
-        </div>
-        <div class="calc-functions">
-            <button type="button" name="calc">+</button>
-            <button type="button" name="calc">-</button>
-            <button type="button" name="calc">*</button>
-            <button type="button" name="calc">/</button>
-            <button type="button" name="calc">↵</button>
-            <button type="reset" name="calc">C</button>
+    <div class="container">
+        <div class="calculator">
+            <h1>Javascript Calculator</h1>
+            <div class="display">
+                <div class="output-display">
+                    <output name="calc" >0</output>
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="inputs">
+                    <div class="calc-buttons">
+                        <button class="calc-button" type="button" name="calc">9</button>
+                        <button class="calc-button" type="button" name="calc">8</button>
+                        <button class="calc-button" type="button" name="calc">7</button>
+                        <button class="calc-button" type="button" name="calc">6</button>
+                        <button class="calc-button" type="button" name="calc">5</button>
+                        <button class="calc-button" type="button" name="calc">4</button>
+                        <button class="calc-button" type="button" name="calc">3</button>
+                        <button class="calc-button" type="button" name="calc">2</button>
+                        <button class="calc-button" type="button" name="calc">1</button>
+                        <button class="calc-button" type="button" name="calc">0</button>
+                        <button class="calc-button" type="button" name="calc">↵</button>
+                        <button class="calc-button" type="reset" name="calc">C</button>
+                    </div>
+                    <div class="calc-functions">
+                        <button class="calc-button" type="button" name="calc">+</button>
+                        <button class="calc-button" type="button" name="calc">-</button>
+                        <button class="calc-button" type="button" name="calc">*</button>
+                        <button class="calc-button" type="button" name="calc">/</button>
+                    </div>
+            </div>
+            </div>
         </div>
     </div>
 </body>
