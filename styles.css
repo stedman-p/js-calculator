@@ -109,6 +109,10 @@ h1 {
 
 }
 
-.calc-button:hover {
+.calc-button:hover .calc-operator:hover {
     background-color: lightgray;
+}
+
+.calc-button:active, .calc-operator:active {
+    background-color: darkgray;
 }

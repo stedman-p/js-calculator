@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="./scripts.js"></script>
+    <script src="./scripts.js" defer></script>
     <title>JS Calculator</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
             <h1>Javascript Calculator</h1>
             <div class="display">
                 <div class="output-display">
-                    <output name="calc" >0</output>
+                    <output name="calc" id="display">0</output>
                 </div>
             </div>
             <div class="buttons">
@@ -30,14 +30,14 @@
                         <button class="calc-button" type="button" name="calc">2</button>
                         <button class="calc-button" type="button" name="calc">1</button>
                         <button class="calc-button" type="button" name="calc">0</button>
-                        <button class="calc-button" type="button" name="calc">↵</button>
-                        <button class="calc-button" type="reset" name="calc">C</button>
+                        <button class="calc-function" type="button" name="calc">↵</button>
+                        <button class="calc-function" type="reset" name="calc">C</button>
                     </div>
                     <div class="calc-functions">
-                        <button class="calc-button" type="button" name="calc">+</button>
-                        <button class="calc-button" type="button" name="calc">-</button>
-                        <button class="calc-button" type="button" name="calc">*</button>
-                        <button class="calc-button" type="button" name="calc">/</button>
+                        <button class="calc-operator" type="button" name="calc">+</button>
+                        <button class="calc-operator" type="button" name="calc">-</button>
+                        <button class="calc-operator" type="button" name="calc">*</button>
+                        <button class="calc-operator" type="button" name="calc">/</button>
                     </div>
             </div>
             </div>
