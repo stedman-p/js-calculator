@@ -5,7 +5,6 @@
 
 * {
     margin: 0;
-    box-sizing: border-box;
 }
 
 html, body {
@@ -34,7 +33,7 @@ input, button {
 }
 
 * {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .container {
@@ -44,22 +43,35 @@ input, button {
 }
 
 .calculator {
-    margin-top: 10%;
-    width:40em;
+    margin: 5% 0;
+    width:35em;
     min-height: 30em;
+    background-color: burlywood;
+}
+
+h1 {
+    text-align: center;
 }
 
 .display {
-}
-
-.output-display {
     width: 100%;
     display: flex;
     justify-content: center;
+    margin: .5em 0;
 }
 
-.display > output {
-    text-align: center;
+.output-display {
+    min-width: 24em;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: right;
+}
+
+.output-display > output {
+    text-align: right;
+    min-width: 10em;
+    margin: .5em;
+    font-size: larger;
 }
 
 .inputs {
@@ -67,6 +79,8 @@ input, button {
     flex-direction: row;
     width: 100%;
     justify-content: center;
+    font-size: larger;
+    margin-bottom: 1em;
 }
 
 .buttons {
@@ -77,14 +91,16 @@ input, button {
 
 .calc-buttons {
     display: grid;
-    grid-template-columns: 6em 6em 6em;
-    grid-template-rows: auto;
+    grid-template-columns: 5em 5em 5em;
+    grid-template-rows: 6.5em 6.5em 6.5em 6.5em;
+    border-right: 0;
 }
 
 .calc-functions {
+    border-left: 0;
+    margin:0;
     display: grid;
-    grid-template-rows: repeat();
-    grid-template-columns: 6em;
+    grid-template-columns: 5em;
     grid-template-rows: auto;
 }
 
