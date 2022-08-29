@@ -91,14 +91,18 @@ function isLeaf(Node) {
 // returns root of tree
 
 function buildExpressionTree(exprString) {
-    // find last occurance of + or - first, else * or /
-    let opIndex = exprString.lastIndexOf('+')
+    // find last occurance of '+' or '-' first, else '*' or '/'
+    // future feature: parentheses??
+    // let opIndex = exprString.lastIndexOf('+')
+    // if (opIndex === -1)
+    //     opIndex = exprString.lastIndexOf('-')
+    // if (opIndex === -1)
+    //     opIndex = exprString.lastIndexOf('/')
+    // if (opIndex === -1)
+    //     opIndex = exprString.lastIndexOf('*')
+    let opIndex = exprString.search(/[\-\+](?!.*[\-\+])/g) // finds last occurence of '+' or '-'
     if (opIndex === -1)
-        opIndex = exprString.lastIndexOf('-')
-    if (opIndex === -1)
-        opIndex = exprString.lastIndexOf('/')
-    if (opIndex === -1)
-        opIndex = exprString.lastIndexOf('*')
+        opIndex = exprString.search(/[\/\*](?!.*[\/\*])/g) // finds last occurence of '/' or '*'
     if (opIndex === -1) { // no operators indicates leaf
         const newNode = new expressionNode(exprString);
         // console.log('found leaf')
@@ -140,6 +144,7 @@ function evaluateExpressionTree(exprNode) {
 
 }
 
+// default calculator value
 let displayString = "0"
 
 const display = document.querySelector('#display')
