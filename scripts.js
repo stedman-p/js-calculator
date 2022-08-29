@@ -81,13 +81,6 @@ class expressionNode {
     }
 }
 
-function isLeaf(Node) {
-    if (!Node.left | !Node.right)
-        return true;
-    else
-        return false;
-}
-
 // returns root of tree
 
 function buildExpressionTree(exprString) {
