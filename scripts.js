@@ -1,20 +1,20 @@
 function add(addend1, addend2) {
-    console.log(`adding ${addend1} to ${addend2}`)
+    // console.log(`adding ${addend1} to ${addend2}`)
     return parseInt(addend1) + parseInt(addend2);
 }
 
 function subtract(minuend, subtrahend) {
-    console.log(`subtracting ${subtrahend} from ${minuend}`)
+    // console.log(`subtracting ${subtrahend} from ${minuend}`)
     return parseInt(minuend) - parseInt(subtrahend);
 }
 
 function multiply(multiplicand, multiplier) {
-    console.log(`multiplying ${multiplicand} by ${multiplier}`)
+    // console.log(`multiplying ${multiplicand} by ${multiplier}`)
     return parseInt(multiplicand) * parseInt(multiplier);
 }
 
 function divide(dividend, divisor) {
-    console.log(`dividing ${dividend} by ${divisor}`)
+    // console.log(`dividing ${dividend} by ${divisor}`)
     return parseInt(dividend) / parseInt(divisor);
 }
 
@@ -67,9 +67,10 @@ function clearDisplay() {
 
 function evaluateDisplay() {
     if (isOperator(display.textContent[display.textContent.length - 2])) {
-        console.log("don't fuckin do that")
         return;
     }
+    theroot = buildExpressionTree(display.textContent.replace(/\s/g, ''))
+    console.log(evaluateExpressionTree(theroot))
 }
 
 class expressionNode {
@@ -87,9 +88,6 @@ function isLeaf(Node) {
         return false;
 }
 
-rootNode = new expressionNode();
-tststring = "4 + 5 * 3 - 2"
-
 // returns root of tree
 
 function buildExpressionTree(exprString) {
@@ -101,20 +99,20 @@ function buildExpressionTree(exprString) {
         opIndex = exprString.lastIndexOf('/')
     if (opIndex === -1)
         opIndex = exprString.lastIndexOf('*')
-    if (opIndex === -1) { // no operators = leaf with data = exprString
+    if (opIndex === -1) { // no operators indicates leaf
         const newNode = new expressionNode(exprString);
-        console.log('found leaf')
+        // console.log('found leaf')
         return newNode;
     }
 
     const leftside = exprString.slice(0, opIndex);
     const rightside = exprString.slice(opIndex + 1);
 
-    console.log('exprstr:"' + exprString + '"')
-    console.log('index:' + opIndex)
-    console.log('operator:' + exprString[opIndex])
-    console.log('leftside:' + leftside)
-    console.log('rightside:' + rightside);
+    // console.log('exprstr:"' + exprString + '"')
+    // console.log('index:' + opIndex)
+    // console.log('operator:' + exprString[opIndex])
+    // console.log('leftside:' + leftside)
+    // console.log('rightside:' + rightside);
 
     if (leftside && rightside) {
         newNode = new expressionNode(exprString[opIndex], buildExpressionTree(leftside), buildExpressionTree(rightside))
@@ -141,9 +139,6 @@ function evaluateExpressionTree(exprNode) {
     }
 
 }
-
-theroot = buildExpressionTree(tststring.replace(/\s/g, ''))
-console.log(evaluateExpressionTree(theroot))
 
 let displayString = "0"
 
