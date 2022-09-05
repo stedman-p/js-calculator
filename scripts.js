@@ -45,7 +45,7 @@ function operate(operator, num1, num2) {
     }
 }
 
-function updateDisplay(stringValue, isCharAnOperator = false) {
+function appendSymbolToDisplay(stringValue, isCharAnOperator = false) {
     // don't append an operator to another operator
     if (isCharAnOperator && isOperator(display.textContent[display.textContent.length - 2])) {
         return;
@@ -71,6 +71,7 @@ function evaluateDisplay() {
     }
     theroot = buildExpressionTree(display.textContent.replace(/\s/g, ''))
     console.log(evaluateExpressionTree(theroot))
+    display.textContent = evaluateExpressionTree(theroot)
 }
 
 class expressionNode {
@@ -84,15 +85,6 @@ class expressionNode {
 // returns root of tree
 
 function buildExpressionTree(exprString) {
-    // find last occurance of '+' or '-' first, else '*' or '/'
-    // future feature: parentheses??
-    // let opIndex = exprString.lastIndexOf('+')
-    // if (opIndex === -1)
-    //     opIndex = exprString.lastIndexOf('-')
-    // if (opIndex === -1)
-    //     opIndex = exprString.lastIndexOf('/')
-    // if (opIndex === -1)
-    //     opIndex = exprString.lastIndexOf('*')
     let opIndex = exprString.search(/[\-\+](?!.*[\-\+])/g) // finds last occurence of '+' or '-'
     if (opIndex === -1)
         opIndex = exprString.search(/[\/\*](?!.*[\/\*])/g) // finds last occurence of '/' or '*'
@@ -151,13 +143,13 @@ const evaluateButton = document.querySelector("#evaluatebtn");
 
 numberButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-        updateDisplay(btn.textContent)
+        appendSymbolToDisplay(btn.textContent)
     });
 })
 
 operatorButtons.forEach(btn => {
     btn.addEventListener("click", () => {
-        updateDisplay(btn.textContent, true)
+        appendSymbolToDisplay(btn.textContent, true)
     })
 })
 
