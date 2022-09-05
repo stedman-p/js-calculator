@@ -70,8 +70,8 @@ function evaluateDisplay() {
         return;
     }
     theroot = buildExpressionTree(display.textContent.replace(/\s/g, ''))
-    console.log(evaluateExpressionTree(theroot))
-    display.textContent = evaluateExpressionTree(theroot)
+    console.log(evaluateExpressionTree(theroot));
+    display.textContent = evaluateExpressionTree(theroot);
 }
 
 class expressionNode {
@@ -136,8 +136,8 @@ const display = document.querySelector('#display')
 
 display.textContent = displayString
 
-const numberButtons = document.querySelectorAll('.calc-button');
-const operatorButtons = document.querySelectorAll('.calc-operator');
+const numberButtons = document.querySelectorAll('.nbr-btn');
+const operatorButtons = document.querySelectorAll('.operator-btn');
 const clearButton = document.querySelector("#clearbtn");
 const evaluateButton = document.querySelector("#evaluatebtn");
 
